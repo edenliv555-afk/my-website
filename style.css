@@ -314,6 +314,123 @@ footer {
   font-style: italic;
 }
 
+/* Pricing */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  text-align: right;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  padding: 36px 30px;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(20, 20, 43, 0.1);
+}
+
+.pricing-popular {
+  border: 2px solid var(--accent);
+  background: linear-gradient(160deg, #fff 0%, var(--bg-alt) 100%);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  right: 30px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4);
+}
+
+.pricing-card h3 {
+  margin: 6px 0 4px;
+  font-size: 1.4em;
+}
+
+.pricing-tagline {
+  color: var(--text-soft);
+  margin: 0 0 16px;
+}
+
+.pricing-price {
+  font-weight: 800;
+  font-size: 1.1em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pricing-features li {
+  padding-right: 26px;
+  position: relative;
+  color: var(--ink);
+}
+
+.pricing-features li::before {
+  content: "✓";
+  position: absolute;
+  right: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.btn-outline {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary-solid {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-primary-solid:hover {
+  background: #5a4bd4;
+}
+
 @media (max-width: 640px) {
   .nav-links {
     gap: 14px;
