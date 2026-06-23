@@ -266,6 +266,54 @@ footer {
   border-top: 1px solid #eee;
 }
 
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Demo badge */
+.portfolio-card {
+  position: relative;
+}
+
+.demo-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(20, 20, 43, 0.75);
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Stars / placeholder testimonials */
+.stars {
+  color: var(--accent);
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.placeholder-card {
+  border: 1px dashed #c9c4f0;
+  background: #fbfaff;
+}
+
+.placeholder-card p {
+  color: var(--text-soft);
+  font-style: italic;
+}
+
 @media (max-width: 640px) {
   .nav-links {
     gap: 14px;
