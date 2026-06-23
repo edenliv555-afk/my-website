@@ -4,6 +4,7 @@
   --accent-light: #a29bfe;
   --bg-alt: #f4f3fb;
   --text-soft: #5a5a6e;
+  --warm: #ffb86b;
 }
 
 * {
@@ -37,6 +38,9 @@ body {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 800;
   font-size: 1.2em;
 }
