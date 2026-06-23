@@ -431,6 +431,62 @@ footer {
   background: #5a4bd4;
 }
 
+/* Process */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  text-align: center;
+}
+
+.process-step {
+  padding: 10px;
+}
+
+.process-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2em;
+  margin: 0 auto 16px;
+}
+
+.process-step h3 {
+  margin: 0 0 8px;
+}
+
+.process-step p {
+  color: var(--text-soft);
+  margin: 0;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 58px;
+  height: 58px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 200;
+  transition: transform 0.2s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
 @media (max-width: 640px) {
   .nav-links {
     gap: 14px;
