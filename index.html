@@ -169,12 +169,18 @@
   <section id="contact" class="section">
     <h2 class="section-title reveal">צור קשר</h2>
     <p class="section-sub reveal">יש לך פרויקט בראש? נשמע לי עליו</p>
-    <form class="contact-form">
-      <input type="text" placeholder="שם מלא" required>
-      <input type="email" placeholder="אימייל" required>
-      <textarea placeholder="הודעה" rows="5" required></textarea>
-      <button type="submit">שלח הודעה</button>
+    <form class="contact-form" id="contact-form" action="https://formsubmit.co/edenliv555@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="פנייה חדשה מהאתר - PixelCraft">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="שם מלא" placeholder="שם מלא" required>
+      <input type="email" name="אימייל" placeholder="אימייל" required>
+      <textarea name="הודעה" placeholder="הודעה" rows="5" required></textarea>
+      <button type="submit" id="contact-submit">שלח הודעה</button>
+      <p id="contact-status" class="contact-status"></p>
     </form>
+    <p class="contact-alt">או פשוט <a href="https://wa.me/972542320041" target="_blank" rel="noopener">דברו איתי בוואטסאפ</a></p>
   </section>
 
   <footer>

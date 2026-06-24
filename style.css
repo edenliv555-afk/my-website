@@ -263,6 +263,36 @@ body {
   background: #5a4bd4;
 }
 
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-status {
+  min-height: 1.2em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.contact-status-success {
+  color: #1e9e5a;
+}
+
+.contact-status-error {
+  color: #d6453d;
+}
+
+.contact-alt {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--text-soft);
+}
+
+.contact-alt a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 footer {
   text-align: center;
   padding: 30px;
