@@ -3,42 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>לה־בוטיק | חנות אופנה</title>
+<title>LUNA | בוטיק אופנה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; }
-  body { font-family: 'Heebo', Arial, sans-serif; margin: 0; background: #fffaf6; color: #2b2420; }
-  header { background: #2b2420; color: #fff; padding: 24px 6%; display: flex; justify-content: space-between; align-items: center; }
-  header h1 { margin: 0; font-size: 1.4em; letter-spacing: 1px; }
-  .cart { background: #d8a25e; color: #2b2420; padding: 8px 16px; border-radius: 20px; font-weight: 700; font-size: 0.9em; }
-  .hero { text-align: center; padding: 70px 20px; background: linear-gradient(135deg, #f3e3d3, #fffaf6); }
-  .hero h2 { font-size: 2.2em; margin: 0 0 10px; }
-  .hero p { color: #6b5e52; }
-  .badge { display: inline-block; background: #d8a25e; color: #2b2420; padding: 6px 16px; border-radius: 20px; font-size: 0.85em; margin-top: 16px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; padding: 50px 20px; }
-  .product { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 16px rgba(0,0,0,0.06); transition: transform 0.2s; }
-  .product:hover { transform: translateY(-4px); }
-  .thumb { height: 140px; background: linear-gradient(135deg, #d8a25e, #f3e3d3); }
-  .product h3 { font-size: 1em; margin: 14px 14px 4px; }
-  .price { margin: 0 14px 14px; color: #d8a25e; font-weight: 700; }
-  footer { text-align: center; padding: 24px; color: #998d80; font-size: 0.9em; }
+  :root {
+    --ink: #2a2320;
+    --blush: #e8d5cc;
+    --blush-deep: #c9a99c;
+    --cream: #faf6f2;
+    --soft: #8a7d76;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Heebo', sans-serif; color: var(--ink); background: var(--cream); line-height: 1.7; font-weight: 300; }
+  h1,h2,h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.2; }
+  img, svg { display: block; max-width: 100%; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  /* Top bar */
+  .topbar { background: var(--ink); color: var(--cream); text-align: center; font-size: 0.78em; letter-spacing: 2px; padding: 9px; }
+
+  /* Nav */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 26px 32px; max-width: 1180px; margin: 0 auto; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8em; letter-spacing: 6px; font-weight: 600; }
+  .nav-menu { display: flex; gap: 36px; list-style: none; }
+  .nav-menu a { text-decoration: none; color: var(--ink); font-size: 0.85em; letter-spacing: 1px; transition: opacity .2s; }
+  .nav-menu a:hover { opacity: .55; }
+  .nav-icons { display: flex; gap: 20px; font-size: 0.95em; }
+
+  /* Hero */
+  .hero { position: relative; height: 78vh; min-height: 520px; display: flex; align-items: center; justify-content: center; text-align: center;
+    background: linear-gradient(120deg, #efe2da 0%, #e3cfc4 45%, #d3b4a6 100%); overflow: hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:
+    radial-gradient(circle at 78% 30%, rgba(255,255,255,.5), transparent 42%),
+    radial-gradient(circle at 20% 80%, rgba(201,169,156,.5), transparent 50%); }
+  .hero-inner { position: relative; z-index: 2; }
+  .hero .eyebrow { letter-spacing: 5px; font-size: 0.8em; color: var(--ink); opacity:.7; }
+  .hero h1 { font-size: 5em; margin: 14px 0 8px; }
+  .hero p { font-size: 1.1em; color: var(--ink); opacity:.75; margin-bottom: 30px; }
+  .btn { display: inline-block; background: var(--ink); color: var(--cream); padding: 15px 44px; text-decoration: none; letter-spacing: 2px; font-size: 0.82em; transition: background .25s; }
+  .btn:hover { background: #4a3f39; }
+  .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+  /* marquee categories */
+  .cats { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+  .cat { position: relative; height: 300px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 30px; overflow:hidden; }
+  .cat span { position: relative; z-index:2; color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.9em; letter-spacing:2px; }
+  .cat::after { content:''; position:absolute; inset:0; background: rgba(42,35,32,.25); transition: background .3s; }
+  .cat:hover::after { background: rgba(42,35,32,.1); }
+  .c1 { background: linear-gradient(160deg,#d8c0b4,#b98e7d); }
+  .c2 { background: linear-gradient(160deg,#cdb5c4,#9d7b8d); }
+  .c3 { background: linear-gradient(160deg,#c2bca8,#8f8771); }
+
+  /* Section heading */
+  .sec { padding: 100px 0; }
+  .sec-head { text-align:center; margin-bottom: 56px; }
+  .sec-head .eyebrow { letter-spacing:4px; font-size:.78em; color:var(--blush-deep); }
+  .sec-head h2 { font-size: 3em; margin-top: 8px; }
+
+  /* Products */
+  .grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 30px; }
+  .product { text-align: center; cursor: pointer; }
+  .product .ph { height: 280px; border-radius: 2px; margin-bottom: 16px; position: relative; overflow:hidden; transition: transform .35s; }
+  .product:hover .ph { transform: translateY(-6px); }
+  .product .tag { position:absolute; top:14px; right:14px; background:#fff; color:var(--ink); font-size:.68em; letter-spacing:1px; padding:5px 11px; }
+  .product h3 { font-family:'Heebo'; font-weight:500; font-size:1em; margin-bottom: 4px; }
+  .product .price { color: var(--blush-deep); font-weight:500; }
+  .p1{background:linear-gradient(150deg,#e3d0c6,#c8a695)} .p2{background:linear-gradient(150deg,#d8c4cf,#ad8b9c)}
+  .p3{background:linear-gradient(150deg,#cfcbb8,#a39b82)} .p4{background:linear-gradient(150deg,#d9c8bd,#bd9c8a)}
+  .p5{background:linear-gradient(150deg,#cdbfd0,#9f86a2)} .p6{background:linear-gradient(150deg,#d6cdc0,#b0a48f)}
+  .p7{background:linear-gradient(150deg,#e0cec3,#c19e8d)} .p8{background:linear-gradient(150deg,#d2c2cc,#a68597)}
+
+  /* Lookbook split */
+  .split { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+  .split.alt { direction: ltr; }
+  .split.alt > * { direction: rtl; }
+  .split .visual { height: 460px; border-radius: 3px; }
+  .v1 { background: linear-gradient(150deg,#e6d3c9,#b58f7e); }
+  .v2 { background: linear-gradient(150deg,#d3bcca,#967589); }
+  .split h2 { font-size: 2.7em; margin-bottom: 18px; }
+  .split p { color: var(--soft); margin-bottom: 26px; }
+
+  /* Quote */
+  .quote { background: var(--ink); color: var(--cream); text-align:center; padding: 110px 0; }
+  .quote p { font-family:'Cormorant Garamond',serif; font-size: 2.4em; font-style: italic; max-width: 800px; margin: 0 auto 20px; line-height:1.35; }
+  .quote span { letter-spacing:3px; font-size:.8em; opacity:.6; }
+
+  /* Newsletter */
+  .news { text-align:center; padding: 100px 0; background: var(--blush); }
+  .news h2 { font-size: 2.6em; margin-bottom: 12px; }
+  .news p { color:var(--ink); opacity:.7; margin-bottom: 30px; }
+  .news-form { display:flex; max-width: 460px; margin: 0 auto; }
+  .news-form input { flex:1; border: 1px solid var(--ink); border-left:none; padding: 14px 18px; font-family:'Heebo'; background:transparent; }
+  .news-form button { background: var(--ink); color: var(--cream); border:none; padding: 0 30px; letter-spacing:1px; cursor:pointer; }
+
+  /* Footer */
+  footer { background: #211b18; color: #cdbfb6; padding: 70px 0 30px; }
+  .foot-grid { display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+  .foot-grid h4 { font-family:'Heebo'; font-weight:600; color:#fff; margin-bottom:16px; font-size:.95em; letter-spacing:1px; }
+  .foot-grid a { display:block; color:#cdbfb6; text-decoration:none; font-size:.88em; margin-bottom:10px; opacity:.8; }
+  .foot-logo { font-family:'Cormorant Garamond',serif; font-size:2em; letter-spacing:5px; color:#fff; margin-bottom:14px; }
+  .foot-bottom { border-top:1px solid #3a302b; padding-top:24px; text-align:center; font-size:.8em; opacity:.6; }
+
+  @media (max-width: 860px){
+    .nav-menu{display:none}
+    .hero h1{font-size:3em}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .cats{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr; gap:30px}
+    .split .visual{height:300px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
 </style>
 </head>
 <body>
-  <header>
-    <h1>לה־בוטיק</h1>
-    <div class="cart">🛍 עגלה (0)</div>
-  </header>
-  <section class="hero">
-    <h2>קולקציית הסתיו החדשה</h2>
-    <p>עיצוב נקי, איכות גבוהה, משלוח מהיר לכל הארץ</p>
-    <span class="badge">משלוח חינם מעל ₪200</span>
+  <div class="topbar">משלוח חינם בהזמנה מעל ₪200 · החזרות עד 30 יום</div>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#new">חדש</a></li>
+      <li><a href="#shop">קולקציה</a></li>
+      <li><a href="#look">לוקבוק</a></li>
+      <li><a href="#">אודות</a></li>
+    </ul>
+    <div class="logo">LUNA</div>
+    <div class="nav-icons"><span>🔍</span><span>♡</span><span>🛍 (0)</span></div>
+  </nav>
+
+  <section class="hero" id="new">
+    <div class="hero-inner">
+      <div class="eyebrow">קולקציית סתיו 2026</div>
+      <h1>אלגנטיות שקטה</h1>
+      <p>בגדים שנתפרים סביב הרגעים החשובים שלך</p>
+      <a href="#shop" class="btn">לצפייה בקולקציה</a>
+    </div>
   </section>
-  <div class="grid">
-    <div class="product"><div class="thumb"></div><h3>שמלת מידי</h3><p class="price">₪229</p></div>
-    <div class="product"><div class="thumb"></div><h3>חולצת לינן</h3><p class="price">₪149</p></div>
-    <div class="product"><div class="thumb"></div><h3>מכנס גזרה רחבה</h3><p class="price">₪189</p></div>
-    <div class="product"><div class="thumb"></div><h3>מעיל צמר</h3><p class="price">₪349</p></div>
+
+  <section class="cats">
+    <div class="cat c1"><span>שמלות</span></div>
+    <div class="cat c2"><span>הלבשה עליונה</span></div>
+    <div class="cat c3"><span>אקססוריז</span></div>
+  </section>
+
+  <section class="sec" id="shop">
+    <div class="container">
+      <div class="sec-head">
+        <div class="eyebrow">הנמכרים ביותר</div>
+        <h2>מועדפי העונה</h2>
+      </div>
+      <div class="grid">
+        <div class="product"><div class="ph p1"><span class="tag">חדש</span></div><h3>שמלת מידי פליסה</h3><div class="price">₪289</div></div>
+        <div class="product"><div class="ph p2"></div><h3>חולצת משי</h3><div class="price">₪199</div></div>
+        <div class="product"><div class="ph p3"><span class="tag">אחרונים</span></div><h3>מכנס גזרה ישרה</h3><div class="price">₪229</div></div>
+        <div class="product"><div class="ph p4"></div><h3>בלייזר אוברסייז</h3><div class="price">₪349</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="split-wrap">
+    <div class="container">
+      <div class="split" id="look">
+        <div class="visual v1"></div>
+        <div>
+          <div class="sec-head" style="text-align:right;margin:0 0 18px">
+            <div class="eyebrow">לוקבוק</div>
+          </div>
+          <h2>הסיפור שמאחורי הבד</h2>
+          <p>כל פריט בקולקציה נוצר מבדים טבעיים בעבודת יד, עם תשומת לב לכל תפר. אנחנו מאמינות באופנה שנשארת רלוונטית הרבה מעבר לעונה אחת — חתיכות על-זמניות שמלוות אותך לשנים.</p>
+          <a href="#" class="btn btn-outline">קראי עוד</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <footer>דמו לדוגמה — נבנה ע"י PixelCraft</footer>
+
+  <section class="quote">
+    <div class="container">
+      <p>"האופנה דועכת, רק הסגנון נשאר לעד"</p>
+      <span>— קוקו שאנל</span>
+    </div>
+  </section>
+
+  <div class="split-wrap" style="padding:100px 0;">
+    <div class="container">
+      <div class="split alt">
+        <div class="visual v2"></div>
+        <div>
+          <h2>נוצר בישראל,<br>נלבש בכל העולם</h2>
+          <p>הסטודיו שלנו בתל אביב משלב מסורת של תפירה איכותית עם קו עיצובי עכשווי ונקי. אנחנו מייצרות בכמויות קטנות — כדי לשמור על איכות, ועל כך שלא תפגשי את עצמך ברחוב.</p>
+          <a href="#shop" class="btn">לקנייה</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec" style="padding-top:0">
+    <div class="container">
+      <div class="sec-head">
+        <div class="eyebrow">הקולקציה המלאה</div>
+        <h2>עוד תגליות</h2>
+      </div>
+      <div class="grid">
+        <div class="product"><div class="ph p5"></div><h3>סוודר קשמיר</h3><div class="price">₪399</div></div>
+        <div class="product"><div class="ph p6"><span class="tag">חדש</span></div><h3>חצאית מקסי</h3><div class="price">₪259</div></div>
+        <div class="product"><div class="ph p7"></div><h3>מעיל טרנץ'</h3><div class="price">₪549</div></div>
+        <div class="product"><div class="ph p8"></div><h3>תיק עור</h3><div class="price">₪319</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news">
+    <div class="container">
+      <h2>הצטרפי למשפחת LUNA</h2>
+      <p>10% הנחה על ההזמנה הראשונה + גישה מוקדמת לקולקציות חדשות</p>
+      <form class="news-form" onsubmit="return false">
+        <button type="submit">הרשמה</button>
+        <input type="email" placeholder="האימייל שלך">
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-logo">LUNA</div>
+          <p style="font-size:.88em;opacity:.8;max-width:260px">בוטיק אופנה עצמאי. עיצוב על-זמני, ייצור אחראי, שירות אישי.</p>
+        </div>
+        <div><h4>קנייה</h4><a href="#">חדש</a><a href="#">שמלות</a><a href="#">אקססוריז</a><a href="#">מבצעים</a></div>
+        <div><h4>שירות</h4><a href="#">משלוחים</a><a href="#">החזרות</a><a href="#">מדריך מידות</a><a href="#">צרי קשר</a></div>
+        <div><h4>עקבי אחרינו</h4><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">TikTok</a><a href="#">Pinterest</a></div>
+      </div>
+      <div class="foot-bottom">דמו לדוגמה — נבנה ע"י PixelCraft · © 2026 LUNA</div>
+    </div>
+  </footer>
 </body>
 </html>
