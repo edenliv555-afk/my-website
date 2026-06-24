@@ -318,18 +318,29 @@ textarea:focus-visible {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   padding: 14px;
   font-size: 1em;
   border: 1px solid #ddd;
   border-radius: 10px;
   font-family: inherit;
+  background: #fff;
+  color: var(--ink);
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
   outline: none;
   border-color: var(--accent);
+}
+
+.contact-privacy {
+  font-size: 0.85em;
+  color: var(--text-soft);
+  text-align: center;
+  margin: 0;
 }
 
 .contact-form button {
@@ -380,9 +391,47 @@ textarea:focus-visible {
 
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 30px 6%;
   color: var(--text-soft);
   border-top: 1px solid #eee;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto 16px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.footer-contact {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-contact a {
+  color: var(--text-soft);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: var(--accent);
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.9em;
 }
 
 /* Scroll reveal animation */

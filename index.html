@@ -10,6 +10,8 @@
   <meta property="og:url" content="https://edenliv555-afk.github.io/my-website/">
   <link rel="canonical" href="https://edenliv555-afk.github.io/my-website/">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="apple-touch-icon" href="logo.svg">
+  <meta name="theme-color" content="#14142b">
   <title>PixelCraft - בניית אתרים שמביאים לקוחות</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -22,7 +24,11 @@
     "founder": "עדן",
     "url": "https://edenliv555-afk.github.io/my-website/",
     "description": "בניית אתרים מקצועית לעסקים קטנים ובינוניים, עם פרסום בפייסבוק ואינסטגרם.",
-    "areaServed": "IL"
+    "areaServed": "IL",
+    "telephone": "+972542320041",
+    "email": "edenliv555@gmail.com",
+    "image": "https://edenliv555-afk.github.io/my-website/logo.svg",
+    "priceRange": "$$"
   }
   </script>
 </head>
@@ -204,15 +210,32 @@
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <input type="text" name="שם מלא" placeholder="שם מלא" required>
       <input type="email" name="אימייל" placeholder="אימייל" required>
-      <textarea name="הודעה" placeholder="הודעה" rows="5" required></textarea>
+      <select name="חבילה מבוקשת" required>
+        <option value="" disabled selected>איזו חבילה מעניינת אותך?</option>
+        <option value="בניית אתר + תפעול">בניית אתר + תפעול</option>
+        <option value="אתר + פרסום ברשתות">אתר + פרסום ברשתות</option>
+        <option value="עוד לא בטוח/ה">עוד לא בטוח/ה</option>
+      </select>
+      <textarea name="הודעה" placeholder="ספרו לי קצת על הפרויקט" rows="5" required></textarea>
       <button type="submit" id="contact-submit">שלח הודעה</button>
       <p id="contact-status" class="contact-status"></p>
+      <p class="contact-privacy">הפרטים שלך נשארים פרטיים ולא יועברו לאף גורם שלישי.</p>
     </form>
     <p class="contact-alt">או פשוט <a href="https://wa.me/972542320041" target="_blank" rel="noopener">דברו איתי בוואטסאפ</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2026 PixelCraft. כל הזכויות שמורות.</p>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="logo.svg" alt="PixelCraft" width="24" height="24">
+        <span>PixelCraft</span>
+      </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/972542320041" target="_blank" rel="noopener">📱 054-2320041</a>
+        <a href="mailto:edenliv555@gmail.com">✉️ edenliv555@gmail.com</a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 PixelCraft. כל הזכויות שמורות.</p>
   </footer>
 
   <a href="https://wa.me/972542320041" target="_blank" rel="noopener" class="whatsapp-float" aria-label="צור קשר בוואטסאפ">
