@@ -11,18 +11,6 @@ const observer = new IntersectionObserver((entries) => {
 
 revealEls.forEach((el) => observer.observe(el));
 
-function scalePortfolioPreviews() {
-  document.querySelectorAll('.mock-viewport').forEach((viewport) => {
-    const iframe = viewport.querySelector('iframe');
-    if (!iframe) return;
-    const scale = viewport.clientWidth / 1280;
-    iframe.style.transform = `scale(${scale})`;
-  });
-}
-
-window.addEventListener('load', scalePortfolioPreviews);
-window.addEventListener('resize', scalePortfolioPreviews);
-
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
