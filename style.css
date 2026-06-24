@@ -219,8 +219,8 @@ textarea:focus-visible {
 /* Portfolio */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
   text-align: right;
 }
 
@@ -249,6 +249,7 @@ textarea:focus-visible {
   border-radius: 0;
   overflow: hidden;
   background: #eee;
+  position: relative;
 }
 
 .browser-bar {
@@ -265,12 +266,52 @@ textarea:focus-visible {
   background: #c9c9d2;
 }
 
-.browser-mock iframe {
-  width: 100%;
-  height: 200px;
+.mock-viewport {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.mock-viewport iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 820px;
   border: none;
-  display: block;
+  transform-origin: top left;
   pointer-events: none;
+}
+
+.mock-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 43, 0.78);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.portfolio-card:hover .mock-overlay {
+  opacity: 1;
+}
+
+.portfolio-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 1;
 }
 
 .portfolio-card h3 {
