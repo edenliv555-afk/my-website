@@ -1,8 +1,17 @@
 const revealEls = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entries) => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
+      if (!reduceMotion) {
+        // stagger siblings that appear together
+        const siblings = Array.from(entry.target.parentElement.children).filter((c) =>
+          c.classList.contains('reveal')
+        );
+        const index = siblings.indexOf(entry.target);
+        entry.target.style.transitionDelay = `${Math.min(index, 5) * 80}ms`;
+      }
       entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
