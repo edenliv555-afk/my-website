@@ -28,12 +28,17 @@
 </head>
 <body>
 
-  <nav class="navbar">
+  <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+
+  <nav class="navbar" id="navbar">
     <div class="nav-logo">
       <svg class="logo-mark" viewBox="0 0 32 32" width="26" height="26"><rect x="2" y="2" width="12" height="12" rx="3" fill="#6c5ce7"/><rect x="18" y="2" width="12" height="12" rx="3" fill="#a29bfe"/><rect x="10" y="18" width="12" height="12" rx="3" fill="#14142b"/></svg>
       PixelCraft
     </div>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label="פתח תפריט ניווט" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#process">איך זה עובד</a></li>
       <li><a href="#pricing">תוכניות</a></li>
       <li><a href="#portfolio">תיק עבודות</a></li>
@@ -43,7 +48,7 @@
     </ul>
   </nav>
 
-  <header class="hero">
+  <header class="hero" id="main-content">
     <div class="hero-content">
       <h1 class="reveal">אתר שמביא לקוחות,<br>לא רק שנראה טוב</h1>
       <p class="hero-sub reveal">בניית אתרים מקצועית לעסקים קטנים ובינוניים — עיצוב שמושך עין ותוצאות שאפשר למדוד</p>
